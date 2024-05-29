@@ -5,7 +5,6 @@ import javax.swing.*;
 public class FrameCreate {
     JFrame frame = new JFrame("Hridoy's Calculator");
     JLabel l1 = new JLabel();
-    JLabel l2= new JLabel();
     JLabel l3= new JLabel();
     JTextField txt = new JTextField();
 
@@ -16,7 +15,7 @@ public class FrameCreate {
     }
 
     public void BodyShape() {
-        frame.setSize(313, 460);
+        frame.setSize(313, 510);
         frame.getContentPane().setLayout(null);
         frame.getContentPane().setBackground(Color.darkGray);
         frame.setResizable(false);
@@ -26,17 +25,12 @@ public class FrameCreate {
     }
 
     public void DisplayPart() {
-        l1.setBounds(260, 0, 80, 50);
+        l1.setBounds(230, 0, 80, 50);
         l1.setForeground(Color.CYAN);
         frame.add(l1);
 
-        l2.setBounds(120, 0, 70, 20);
-        l2.setForeground(Color.CYAN);
-        l2.setText("container");
-        frame.add(l2);
-
         l3.setBounds(85, 100, 300, 15);
-        l3.setForeground(Color.pink);
+        l3.setForeground(Color.CYAN);
         l3.setText(" Happy calculating! :) ");
         frame.add(l3);
 
@@ -72,6 +66,10 @@ public class FrameCreate {
     JButton Seven = new JButton("7");
     JButton Eight = new JButton("8");
     JButton Nine = new JButton("9");
+    JButton Sin = new JButton("sin");
+    JButton Cos = new JButton("cos");
+    JButton Tan = new JButton("tan");
+    JButton Inverse = new JButton("1/x");
 
     public void ButtonShow() {
         Font f = new Font("Arial", Font.BOLD, 20);
@@ -148,9 +146,9 @@ public class FrameCreate {
         Sqrt.setFont(f);
         frame.add(Sqrt);
 
-        LOG.setBounds(150, 170, 60, 40);
-        LOG.setFont(new Font("Arial",Font.BOLD,15));
-        frame.add(LOG);
+        Inverse.setBounds(150, 170, 60, 40);
+        Inverse.setFont(new Font("Arial",Font.BOLD,15));
+        frame.add(Inverse);
 
         Add.setBounds(220, 170, 70, 40);
         Add.setFont(new Font("Arial", Font.BOLD, 30));
@@ -176,6 +174,23 @@ public class FrameCreate {
 
         Eql.setBounds(220, 270, 70, 90);
         Eql.setFont(new Font("Arial", Font.BOLD, 30));
+        Eql.setBackground(Color.lightGray);
         frame.add(Eql);
+
+        Sin.setBounds(10, 420, 60, 40);
+        Sin.setFont(new Font("Arial", Font.BOLD, 15));
+        frame.add(Sin);
+
+        Cos.setBounds(80, 420, 60, 40);
+        Cos.setFont(new Font("Arial", Font.BOLD, 14));
+        frame.add(Cos);
+
+        Tan.setBounds(150, 420, 60, 40);
+        Tan.setFont(new Font("Arial", Font.BOLD, 14));
+        frame.add(Tan);
+
+        LOG.setBounds(220, 420, 70, 40);
+        LOG.setFont(new Font("Arial", Font.BOLD, 14));
+        frame.add(LOG);
     }
 }

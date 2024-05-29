@@ -2,7 +2,9 @@ package Calculator;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static java.lang.Math.log10;
+
+import static java.lang.Math.*;
+import static java.lang.Math.tan;
 
 public class Mechanism extends FrameCreate implements ActionListener {
     Mechanism() {
@@ -38,6 +40,10 @@ public class Mechanism extends FrameCreate implements ActionListener {
         sqr.setEnabled(true);
         Sqrt.setEnabled(true);
         LOG.setEnabled(true);
+        Sin.setEnabled(true);
+        Cos.setEnabled(true);
+        Tan.setEnabled(true);
+        Inverse.setEnabled(true);
     }
 
     public void turn_Off() {
@@ -68,6 +74,10 @@ public class Mechanism extends FrameCreate implements ActionListener {
         sqr.setEnabled(false);
         Sqrt.setEnabled(false);
         LOG.setEnabled(false);
+        Sin.setEnabled(false);
+        Cos.setEnabled(false);
+        Tan.setEnabled(false);
+        Inverse.setEnabled(false);
     }
 
     public void GetInput() {
@@ -94,6 +104,10 @@ public class Mechanism extends FrameCreate implements ActionListener {
         sqr.addActionListener(this);
         Sqrt.addActionListener(this);
         LOG.addActionListener(this);
+        Sin.addActionListener(this);
+        Cos.addActionListener(this);
+        Tan.addActionListener(this);
+        Inverse.addActionListener(this);
     }
 
     @Override
@@ -186,6 +200,26 @@ public class Mechanism extends FrameCreate implements ActionListener {
             } else {
                 txt.setText(string);
             }
+        } else if (obj == Sin) {
+            a = Double.parseDouble(txt.getText());
+            l1.setText("sin(" + a + ")");
+            double sinValue = sin(Math.toRadians(a));
+            txt.setText(Double.toString(sinValue));
+        } else if (obj == Cos) {
+            a = Double.parseDouble(txt.getText());
+            l1.setText("cos(" + a + ")");
+            double cosValue = cos(Math.toRadians(a));
+            txt.setText(Double.toString(cosValue));
+        } else if (obj == Tan) {
+            a = Double.parseDouble(txt.getText());
+            l1.setText("tan(" + a + ")");
+            double tanValue = tan(Math.toRadians(a));
+            txt.setText(Double.toString(tanValue));
+        } else if (obj == Inverse) {
+            a = Double.parseDouble(txt.getText());
+            l1.setText("1/" + a);
+            double inverseValue = 1 / a;
+            txt.setText(Double.toString(inverseValue));
         } else if (obj == Eql) {
             switch (sign) {
                 case 1:
