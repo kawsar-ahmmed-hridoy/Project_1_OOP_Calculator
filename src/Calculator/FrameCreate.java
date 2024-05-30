@@ -26,7 +26,7 @@ public class FrameCreate {
 
     public void DisplayPart() {
         l1.setBounds(230, 0, 80, 50);
-        l1.setForeground(Color.CYAN);
+        l1.setForeground(Color.white);
         frame.add(l1);
 
         l3.setBounds(85, 100, 300, 15);
